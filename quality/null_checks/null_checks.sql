@@ -1,0 +1,42 @@
+-- orders
+ SELECT 'order_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+ SELECT 'customer_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "customer_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "customer_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+ SELECT 'order_status' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_status" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_status" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+ SELECT 'order_purchase_timestamp' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_purchase_timestamp" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_purchase_timestamp" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+ SELECT 'order_approved_at' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_approved_at" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_approved_at" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+ SELECT 'order_delivered_carrier_date' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_delivered_carrier_date" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_delivered_carrier_date" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+ SELECT 'order_delivered_customer_date' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_delivered_customer_date" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_delivered_customer_date" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+ SELECT 'order_estimated_delivery_date' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_estimated_delivery_date" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_estimated_delivery_date" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.orders;
+
+--  order_items
+ SELECT 'order_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.order_items;
+ SELECT 'order_item_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "order_item_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "order_item_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.order_items;
+ SELECT 'product_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.order_items;
+ SELECT 'seller_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "seller_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "seller_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.order_items;
+ SELECT 'shipping_limit_date' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "shipping_limit_date" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "shipping_limit_date" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.order_items;
+ SELECT 'price' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "price" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "price" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.order_items;
+ SELECT 'freight_value' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "freight_value" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "freight_value" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.order_items;
+
+--  products
+ SELECT 'product_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_category_name' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_category_name" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_category_name" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_name_lenght' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_name_lenght" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_name_lenght" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_description_lenght' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_description_lenght" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_description_lenght" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_photos_qty' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_photos_qty" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_photos_qty" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_weight_g' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_weight_g" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_weight_g" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_length_cm' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_length_cm" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_length_cm" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_height_cm' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_height_cm" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_height_cm" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+ SELECT 'product_width_cm' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "product_width_cm" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "product_width_cm" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.products;
+
+-- customers
+ SELECT 'customer_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "customer_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "customer_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.customers;
+ SELECT 'customer_unique_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "customer_unique_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "customer_unique_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.customers;
+ SELECT 'customer_zip_code_prefix' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "customer_zip_code_prefix" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "customer_zip_code_prefix" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.customers;
+ SELECT 'customer_city' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "customer_city" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "customer_city" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.customers;
+ SELECT 'customer_state' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "customer_state" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "customer_state" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.customers;
+
+-- sellers
+ SELECT 'seller_id' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "seller_id" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "seller_id" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.sellers;
+ SELECT 'seller_zip_code_prefix' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "seller_zip_code_prefix" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "seller_zip_code_prefix" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.sellers;
+ SELECT 'seller_city' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "seller_city" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "seller_city" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.sellers;
+ SELECT 'seller_state' AS column_name, COUNT(*) AS total_rows, COUNT(*) FILTER (WHERE "seller_state" IS NULL) AS null_count, ROUND(100.0 * COUNT(*) FILTER (WHERE "seller_state" IS NULL) / COUNT(*), 2) AS null_percentage FROM raw.sellers;
